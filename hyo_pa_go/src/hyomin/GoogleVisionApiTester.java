@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class GoogleVisionApiTester {
 	static String OCR_STRING;
-	
+	static int num;
 	public static void main(String[] args) throws Exception {
 		remem re = new remem();
 		index get_index = new index();
@@ -33,6 +33,8 @@ public class GoogleVisionApiTester {
 		Scanner scan = new Scanner(System.in);
 		String leak_string="asd";
 		String imageFilePath = scan.nextLine();
+		System.out.println("[*] SELECT : 1.English->korean  2.Korean->English  ");
+		num = scan.nextInt();
 		try {
 			System.err.close();
 		    System.setErr(System.out);
@@ -57,16 +59,10 @@ public class GoogleVisionApiTester {
 			    		
 			    	}
 		
-			    	System.out.print("[*] String in image file : ");
+			    	System.out.print("[*] String in Image file : ");
 			    	leak_string = res.getTextAnnotationsList().get(0).getDescription();
-			    	System.out.println(leak_string);
+			    	System.out.println(new String(leak_string.getBytes("ksc5601"), "euc-kr"));
 			      
-			    	// For full list of available annotations, see http://g.co/cloud/vision/docs
-			    	/*for (EntityAnnotation annotation : res.getTextAnnotationsList()) {
-				    	  
-						//System.out.printf("Text: %s\n", annotation.getDescription());
-						//System.out.printf("Position : %s\n", annotation.getBoundingPoly());
-					}*/
 			    }
 			}
 		} catch(Exception e) {

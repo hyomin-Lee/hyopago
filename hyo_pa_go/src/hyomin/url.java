@@ -6,16 +6,23 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.net.URLDecoder;
-import java.nio.charset.Charset;
-import static java.nio.charset.StandardCharsets.*;
+
 
 public class url extends GoogleVisionApiTester {
     
     public void connection(){
-    	String clientId = "jmBmp4U9s6g_nFSUREcv";//���ø����̼� Ŭ���̾�Ʈ ���̵�";
-        String clientSecret = "pwTp1Ew6H9";//���ø����̼� Ŭ���̾�Ʈ ��ũ����";
-        String value = super.OCR_STRING;
+    	String clientId = "jmBmp4U9s6g_nFSUREcv";
+        String clientSecret = "pwTp1Ew6H9";
+        String value = super.OCR_STRING; // use extends
+        String src_target;
+        
+        if (super.num == 1) {
+        	src_target = "source=en&target=ko&text=";
+        }
+        else {
+        	src_target = "source=ko&target=en&text=";
+        }
+        
         try {
             String text = URLEncoder.encode(value, "UTF-8");
             String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
@@ -25,7 +32,7 @@ public class url extends GoogleVisionApiTester {
             con.setRequestProperty("X-Naver-Client-Id", clientId);
             con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
             // post request
-            String postParams = "source=en&target=ko&text=" + text;
+            String postParams = src_target + text;
             con.setDoOutput(true);
             DataOutputStream wr = new DataOutputStream(con.getOutputStream());
             wr.writeBytes(postParams);
@@ -33,9 +40,9 @@ public class url extends GoogleVisionApiTester {
             wr.close();
             int responseCode = con.getResponseCode();
             BufferedReader br;
-            if(responseCode==200) { // ���� ȣ��
+            if(responseCode==200) { 
                 br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            } else {  // ���� �߻�
+            } else {  
                 br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
             }
             String inputLine;
