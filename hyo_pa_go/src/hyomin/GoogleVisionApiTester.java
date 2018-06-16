@@ -1,5 +1,6 @@
 package hyomin;
 
+// this is main class.
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
@@ -14,27 +15,31 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class GoogleVisionApiTester {
+public class GoogleVisionApiTester{
+	static Scanner scan = new Scanner(System.in);
+	static index get_index = new index();
 	static String OCR_STRING;
 	static int num;
+	
 	public static void main(String[] args) throws Exception {
 		remem re = new remem();
-		index get_index = new index();
+		
 		url parsing = new url();
 		get_index.print_index();
 		re.remember(get_OCR());
+		
 		parsing.connection();
+		
 		
 	}
 	
 	
 	
 	public static String get_OCR() {
-		Scanner scan = new Scanner(System.in);
+		
 		String leak_string="asd";
 		String imageFilePath = scan.nextLine();
-		System.out.println("[*] SELECT : 1.English->korean  2.Korean->English  ");
-		num = scan.nextInt();
+		
 		try {
 			System.err.close();
 		    System.setErr(System.out);
@@ -58,7 +63,8 @@ public class GoogleVisionApiTester {
 			    		System.out.printf("Error: %s\n", res.getError().getMessage());
 			    		
 			    	}
-		
+			        get_index.check();
+			    	num = scan.nextInt();
 			    	System.out.print("[*] String in Image file : ");
 			    	leak_string = res.getTextAnnotationsList().get(0).getDescription();
 			    	System.out.println(new String(leak_string.getBytes("ksc5601"), "euc-kr"));
@@ -68,8 +74,18 @@ public class GoogleVisionApiTester {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+		
+		
 		return leak_string;
 	}
+
+
+	
+
+
+
+	
 	
 	
 }

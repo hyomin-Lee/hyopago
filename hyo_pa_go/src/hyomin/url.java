@@ -16,6 +16,7 @@ public class url extends GoogleVisionApiTester {
         String value = super.OCR_STRING; // use extends
         String src_target;
         
+
         if (super.num == 1) {
         	src_target = "source=en&target=ko&text=";
         }
