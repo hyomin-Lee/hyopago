@@ -1,0 +1,177 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 132120576 bytes for Failed to commit area from 0x0000000083200000 to 0x000000008b000000 of length 132120576.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (t:/workspace/open/src/hotspot/os/windows/os_windows.cpp:3221), pid=19236, tid=872
+#
+# JRE version:  (10.0.1+10) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (10.0.1+10, mixed mode, aot, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:59552 -Dfile.encoding=MS949 hyomin.QuickstartSample
+
+Host: Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 17134 (10.0.17134.1)
+Time: Sun Jun 17 02:42:47 2018 ¢¥eCN©öI¡¾©ö C¡ÍA¨ª¨öA elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002243d988800):  JavaThread "Unknown thread" [_thread_in_vm, id=872, stack(0x000000c614a00000,0x000000c614b00000)]
+
+Stack: [0x000000c614a00000,0x000000c614b00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x5a0369]
+V  [jvm.dll+0x6bcf81]
+V  [jvm.dll+0x6be176]
+V  [jvm.dll+0x6be803]
+V  [jvm.dll+0x234998]
+V  [jvm.dll+0x59dc74]
+V  [jvm.dll+0x592ab5]
+V  [jvm.dll+0x2f625b]
+V  [jvm.dll+0x2f61c5]
+V  [jvm.dll+0x2f60a2]
+V  [jvm.dll+0x2f8286]
+V  [jvm.dll+0x3440d3]
+V  [jvm.dll+0x3447e6]
+V  [jvm.dll+0x3441d3]
+V  [jvm.dll+0x2c43b8]
+V  [jvm.dll+0x2c5501]
+V  [jvm.dll+0x69d33b]
+V  [jvm.dll+0x69eb5c]
+V  [jvm.dll+0x351849]
+V  [jvm.dll+0x6859c2]
+V  [jvm.dll+0x3ba0a3]
+V  [jvm.dll+0x3bc201]
+C  [javaw.exe+0x3541]
+C  [javaw.exe+0xe1cf]
+C  [javaw.exe+0xe376]
+C  [KERNEL32.DLL+0x13034]
+C  [ntdll.dll+0x71431]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000002243b58c220, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000002243d99b800 GCTaskThread "GC Thread#0" [stack: 0x000000c614b00000,0x000000c614c00000] [id=16860]
+  0x000002243d99f000 GCTaskThread "GC Thread#1" [stack: 0x000000c614c00000,0x000000c614d00000] [id=17304]
+  0x000002243d9a0800 GCTaskThread "GC Thread#2" [stack: 0x000000c614d00000,0x000000c614e00000] [id=20744]
+  0x000002243d9a3000 GCTaskThread "GC Thread#3" [stack: 0x000000c614e00000,0x000000c614f00000] [id=22364]
+  0x000002243da0c800 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000c614f00000,0x000000c615000000] [id=23208]
+  0x000002243da18800 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000c615000000,0x000000c615100000] [id=23388]
+
+[error occurred during error reporting (printing all threads), id 0xe0000002]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000002243d9875a0] Heap_lock - owner thread: 0x000002243d988800
+
+Heap address: 0x0000000083200000, size: 1998 MB, Compressed Oops mode: Non-zero based: 0x0000000083200000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff7b60c0000 - 0x00007ff7b60fe000 	C:\Program Files\Java\jre-10.0.1\bin\javaw.exe
+0x00007ffbae530000 - 0x00007ffbae711000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffbae310000 - 0x00007ffbae3c2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffbaad40000 - 0x00007ffbaafb3000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffbad8e0000 - 0x00007ffbad981000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffbae460000 - 0x00007ffbae4fe000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffbae3d0000 - 0x00007ffbae42b000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffbad9f0000 - 0x00007ffbadb14000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffbab9d0000 - 0x00007ffbabb60000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffbab9a0000 - 0x00007ffbab9c0000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffbadf70000 - 0x00007ffbadf98000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffbab6d0000 - 0x00007ffbab862000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffbaaba0000 - 0x00007ffbaac3f000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffbaac40000 - 0x00007ffbaad3a000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffba00d0000 - 0x00007ffba0339000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.112_none_fb3f961b30681c12\COMCTL32.dll
+0x00007ffba21d0000 - 0x00007ffba21da000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffbad270000 - 0x00007ffbad593000 	C:\WINDOWS\System32\combase.dll
+0x00007ffbab8c0000 - 0x00007ffbab93a000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffbae430000 - 0x00007ffbae45d000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffba1550000 - 0x00007ffba163f000 	C:\Program Files\Java\jre-10.0.1\bin\msvcr120.dll
+0x00007ffba5800000 - 0x00007ffba58a6000 	C:\Program Files\Java\jre-10.0.1\bin\msvcp120.dll
+0x0000000060060000 - 0x0000000060ad0000 	C:\Program Files\Java\jre-10.0.1\bin\server\jvm.dll
+0x00007ffbad1a0000 - 0x00007ffbad1a8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffba7280000 - 0x00007ffba72a3000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffba73a0000 - 0x00007ffba73a9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffbae2a0000 - 0x00007ffbae30c000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffba7240000 - 0x00007ffba726a000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffbab870000 - 0x00007ffbab8b9000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ffba7390000 - 0x00007ffba739f000 	C:\Program Files\Java\jre-10.0.1\bin\verify.dll
+0x00007ffb920d0000 - 0x00007ffb92299000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffb920a0000 - 0x00007ffb920c9000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffba6f50000 - 0x00007ffba6f77000 	C:\Program Files\Java\jre-10.0.1\bin\java.dll
+0x00007ffba5920000 - 0x00007ffba5956000 	C:\Program Files\Java\jre-10.0.1\bin\jdwp.dll
+0x00007ffba57c0000 - 0x00007ffba57d6000 	C:\Program Files\Java\jre-10.0.1\bin\zip.dll
+0x00007ffba6c90000 - 0x00007ffba6c9a000 	C:\Program Files\Java\jre-10.0.1\bin\jimage.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jre-10.0.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.112_none_fb3f961b30681c12;C:\Program Files\Java\jre-10.0.1\bin\server
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:59552 -Dfile.encoding=MS949 
+java_command: hyomin.QuickstartSample
+java_class_path (initial): C:\Users\hyomin\Desktop\hyo_pa_go\bin;C:\Users\hyomin\Desktop\jar_files\api-common-1.6.0.jar;C:\Users\hyomin\Desktop\jar_files\commons-codec-1.3.jar;C:\Users\hyomin\Desktop\jar_files\commons-logging-1.1.1.jar;C:\Users\hyomin\Desktop\jar_files\error_prone_annotations-2.1.2.jar;C:\Users\hyomin\Desktop\jar_files\gax-1.27.0.jar;C:\Users\hyomin\Desktop\jar_files\gax-grpc-1.27.0.jar;C:\Users\hyomin\Desktop\jar_files\google-auth-library-credentials-0.9.1.jar;C:\Users\hyomin\Desktop\jar_files\google-auth-library-oauth2-http-0.9.1.jar;C:\Users\hyomin\Desktop\jar_files\google-cloud-core-1.33.0.jar;C:\Users\hyomin\Desktop\jar_files\google-cloud-core-grpc-1.33.0.jar;C:\Users\hyomin\Desktop\jar_files\google-cloud-vision-1.33.0.jar;C:\Users\hyomin\Desktop\jar_files\google-http-client-1.23.0.jar;C:\Users\hyomin\Desktop\jar_files\google-http-client-jackson2-1.19.0.jar;C:\Users\hyomin\Desktop\jar_files\grpc-auth-1.10.1.jar;C:\Users\hyomin\Desktop\jar_files\grpc-context-1.10.1.jar;C:\Users\hyomin\Desktop\jar_files\grpc-core-1.10.1.jar;C:\Users\hyomin\Desktop\jar_files\grpc-netty-shaded-1.10.1.jar;C:\Users\hyomin\Desktop\jar_files\grpc-protobuf-1.10.1.jar;C:\Users\hyomin\Desktop\jar_files\grpc-protobuf-lite-1.10.1.jar;C:\Users\hyomin\Desktop\jar_files\grpc-stub-1.10.1.jar;C:\Users\hyomin\Desktop\jar_files\gson-2.7.jar;C:\Users\hyomin\Desktop\jar_files\guava-20.0.jar;C:\Users\hyomin\Desktop\jar_files\httpclient-4.0.1.jar;C:\Users\hyomin\Desktop\jar_files\httpcore-4.0.1.jar;C:\Users\hyomin\Desktop\jar_files\jackson-core-2.1.3.jar;C:\Users\hyomin\Desktop\jar_files\joda-time-2.9.2.jar;C:\Users\hyomin\Desktop\jar_files\jsr305-3.0.2.jar;C:\Users\hyomin\Desktop\jar_files\opencensus-api-0.11.0.jar;C:\Users\hyomin\Desktop\jar_files\opencensus-contrib-grpc-metrics-0.11.0.jar;C:\Users\hyomin\Desktop\jar_files\protobuf-java-3.5.1.jar;C:\Users\hyomin\Desktop\jar_files\protobuf-java-util-3.5.1.jar;C:\Users\hyomin\Desktop\jar_files\proto-google-cloud-vision-v1-1.15.0.jar
+Launcher Type: SUN_STANDARD
+
+Logging:
+Log output configuration:
+#0: stdout all=warning uptime,level,tags
+#1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\APM_Setup\Server\Apache\bin;C:\APM_Setup\Server\MySQL5\bin;C:\APM_Setup\Server\PHP5;C:\WINDOWS\System32\OpenSSH\;C:\Users\hyomin\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\hyomin\AppData\Local\Programs\Python\Python36-32\;C:\Users\hyomin\AppData\Local\Microsoft\WindowsApps;;C:\Users\hyomin\AppData\Local\Programs\Fiddler;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
+USERNAME=hyomin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 17134 (10.0.17134.1)
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 94 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, physical 8178668k(765664k free), swap 23630700k(109472k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (10.0.1+10) for windows-amd64 JRE (10.0.1+10), built on Mar 27 2018 02:27:48 by "mach5one" with MS VC++ 12.0 (VS2013)
+
+END.
