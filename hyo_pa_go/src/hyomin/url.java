@@ -9,7 +9,7 @@ import java.net.URLEncoder;
 
 
 public class url extends GoogleVisionApiTester {
-    
+    index fini = new index();
     public void connection(){
     	String clientId = "jmBmp4U9s6g_nFSUREcv";
         String clientSecret = "pwTp1Ew6H9";
@@ -60,6 +60,7 @@ public class url extends GoogleVisionApiTester {
             
             System.out.print("[*] Translation result : ");
             System.out.println(new String(slice.getBytes("ksc5601"), "euc-kr"));
+            fini.findex();
             
         } catch (Exception e) {
             System.out.println(e);
